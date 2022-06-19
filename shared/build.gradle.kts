@@ -23,7 +23,27 @@ kotlin {
     }
     
     sourceSets {
-        val commonMain by getting
+
+        val ktorVersion = "2.0.2"
+        val koin = "3.2.0"
+        val koinAnnotaions = "1.0.1"
+        val commonMain by getting {
+            dependencies{
+
+                //ktor
+                implementation("io.ktor:ktor-client-core:$ktorVersion")
+                implementation("io.ktor:ktor-client-okhttp:$ktorVersion")
+
+                //koin
+                implementation("io.insert-koin:koin-core:$koin")
+                implementation("io.insert-koin:koin-test:$koin")
+                implementation("io.insert-koin:koin-android:$koin")
+                implementation("io.insert-koin:koin-annotations:$koinAnnotaions")
+                implementation("io.insert-koin:koin-ksp-compiler:$koinAnnotaions")
+                implementation("io.insert-koin:koin-androidx-compose:$koin")
+
+            }
+        }
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test"))
@@ -39,6 +59,9 @@ kotlin {
             iosX64Main.dependsOn(this)
             iosArm64Main.dependsOn(this)
             iosSimulatorArm64Main.dependsOn(this)
+            dependencies{
+                implementation("io.ktor:ktor-client-darwin:$ktorVersion")
+            }
         }
         val iosX64Test by getting
         val iosArm64Test by getting
