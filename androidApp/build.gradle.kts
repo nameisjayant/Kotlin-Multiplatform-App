@@ -6,13 +6,13 @@ plugins {
 
 
 android {
-    compileSdk = 32
+    compileSdk = ConfigData.compileSdkVersion
     defaultConfig {
         applicationId = "com.example.multiplatformapp.android"
-        minSdk = 21
-        targetSdk = 32
-        versionCode = 1
-        versionName = "1.0"
+        minSdk = ConfigData.minSdkVersion
+        targetSdk = ConfigData.targetSdkVersion
+        versionCode = ConfigData.versionCode
+        versionName = ConfigData.versionName
     }
     buildTypes {
         getByName("release") {
@@ -25,37 +25,39 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = ConfigData.jvmTarget
     }
     buildFeatures {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.0.0-alpha08"
+        kotlinCompilerExtensionVersion = ConfigData.kotlinCompilerExtVersion
     }
 }
 
 dependencies {
-    val composeVersion = "1.1.1"
-    val coroutines = "1.6.1"
+
 
     implementation(project(":shared"))
-    implementation("com.google.android.material:material:1.6.1")
-    implementation("androidx.appcompat:appcompat:1.4.2")
-    implementation("androidx.constraint's:constraint's:2.1.4")
+    implementation(Compose.composeUi)
+    implementation(Compose.composeActivity)
+    implementation(Compose.composeMaterial)
+    implementation(Compose.composeUiTooling)
+    androidTestImplementation(Compose.composeUiTest)
+    debugImplementation(Compose.composeDebugUiTooling)
+
+    implementation(Deps.appCompat)
+    implementation(Deps.constraint)
+    implementation(Deps.material)
+
+    implementation(Deps.Kotlinx.coroutineCore)
+    implementation(Deps.Kotlinx.coroutineAndroid)
+
+    implementation(Koin.koinCore)
+    implementation(Koin.koinAndroid)
+    implementation(Koin.koinTest)
+    implementation(Koin.koinCompose)
 
 
-    // jetpack compose
-    implementation("androidx.compose.ui:ui:$composeVersion")
-    implementation("androidx.compose.material:material:$composeVersion")
-    implementation("androidx.compose.ui:ui-tooling:$composeVersion")
-    implementation("androidx.activity:activity-compose:1.4.0")
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4:$composeVersion")
-    debugImplementation("androidx.compose.ui:ui-tooling:$composeVersion")
-
-
-    //coroutines
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines")
 
 }
