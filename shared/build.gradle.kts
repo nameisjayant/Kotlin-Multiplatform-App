@@ -4,7 +4,7 @@ plugins {
     id("com.android.library")
 }
 
-version = "1.0"
+version = ConfigData.versionCode
 
 kotlin {
     android()
@@ -29,6 +29,10 @@ kotlin {
             dependencies{
                 implementation(Ktor.ktorCore)
                 implementation(Ktor.ktorOkHttp)
+                implementation(Ktor.clientJson)
+                implementation(Ktor.clientLogging)
+                implementation(Ktor.contentNegotiation)
+                implementation(Ktor.json)
 
                 implementation(Koin.koinCore)
                 implementation(Koin.koinAndroid)
@@ -69,10 +73,10 @@ kotlin {
 }
 
 android {
-    compileSdk = 32
+    compileSdk = ConfigData.compileSdkVersion
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {
-        minSdk = 21
-        targetSdk = 32
+        minSdk = ConfigData.minSdkVersion
+        targetSdk = ConfigData.targetSdkVersion
     }
 }

@@ -15,7 +15,6 @@ object Versions {
 object ConfigData{
 
     const val compileSdkVersion = 32
-    const val buildToolsVersion = "30.0.3"
     const val minSdkVersion = 21
     const val targetSdkVersion = 32
     const val versionCode = 1
@@ -57,6 +56,13 @@ object Ktor {
     const val ktorCore = "io.ktor:ktor-client-core:${Versions.ktorVersion}"
     const val ktorOkHttp = "io.ktor:ktor-client-okhttp:${Versions.ktorVersion}"
     const val ktorDarwin = "io.ktor:ktor-client-darwin:${Versions.ktorVersion}"
+    const val clientJson = "io.ktor:ktor-client-json:${Versions.ktorVersion}"
+    const val clientLogging = "io.ktor:ktor-client-logging:${Versions.ktorVersion}"
+    const val clientIos = "io.ktor:ktor-client-ios:${Versions.ktorVersion}"
+    const val clientJava = "io.ktor:ktor-client-java:${Versions.ktorVersion}"
+    const val serverCore = "io.ktor:ktor-server-core:${Versions.ktorVersion}"
+    const val contentNegotiation = "io.ktor:ktor-client-content-negotiation:${Versions.ktorVersion}"
+    const val json = "io.ktor:ktor-serialization-kotlinx-json:${Versions.ktorVersion}"
 }
 
 object Koin {
