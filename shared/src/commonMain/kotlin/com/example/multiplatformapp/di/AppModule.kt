@@ -3,6 +3,7 @@ package com.example.multiplatformapp.di
 import com.example.multiplatformapp.remote.ApiService
 import com.example.multiplatformapp.repository.PostRepository
 import io.ktor.client.*
+import io.ktor.client.plugins.*
 import io.ktor.client.plugins.contentnegotiation.*
 import io.ktor.client.plugins.logging.*
 import io.ktor.serialization.kotlinx.json.*
@@ -17,7 +18,7 @@ fun initKoin(appDeclaration: KoinAppDeclaration = {}) = startKoin {
     modules(commonModule())
 }
 
-fun initKoin() = initKoin{  }
+fun initKoin() = initKoin { }
 
 fun commonModule() = module {
     single { createJson() }
@@ -28,13 +29,18 @@ fun commonModule() = module {
 
 fun createJson() = Json { isLenient = true; ignoreUnknownKeys = true }
 
-fun createHttpClient(json:Json) = HttpClient {
+fun createHttpClient(json: Json) = HttpClient {
 
-    install(ContentNegotiation){
+    install(ContentNegotiation) {
         json(json)
     }
 
-    install(Logging){
+    install(DefaultRequest) {
+        headers.append("Content-Type", "application/json")
+    }
+
+
+    install(Logging) {
         logger = Logger.DEFAULT
         level = LogLevel.INFO
     }

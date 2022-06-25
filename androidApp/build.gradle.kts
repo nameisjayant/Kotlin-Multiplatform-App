@@ -48,7 +48,7 @@ dependencies {
 
     implementation(Deps.appCompat)
     implementation(Deps.constraint)
-    implementation(Deps.material)
+   // implementation(Deps.material)
 
     implementation(Deps.Kotlinx.coroutineCore)
     implementation(Deps.Kotlinx.coroutineAndroid)
