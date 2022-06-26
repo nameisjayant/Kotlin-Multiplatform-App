@@ -7,6 +7,8 @@ plugins {
 
 version = ConfigData.versionCode
 
+
+
 kotlin {
     android()
     iosX64()
@@ -30,21 +32,12 @@ kotlin {
             dependencies{
                 implementation(Deps.Kotlinx.serializationCore)
                 implementation(Ktor.ktorCore)
-                implementation(Ktor.ktorOkHttp)
                 implementation(Ktor.clientJson)
                 implementation(Ktor.clientLogging)
                 implementation(Ktor.contentNegotiation)
                 implementation(Ktor.json)
-                implementation(Ktor.gson)
-                implementation(Ktor.ktorAndroid)
-
                 implementation(Deps.Kotlinx.coroutineCore)
-                implementation(Deps.Kotlinx.coroutineAndroid)
-
                 implementation(Koin.koinCore)
-                implementation(Koin.koinAndroid)
-                implementation(Koin.koinTest)
-                implementation(Koin.koinCompose)
             }
         }
         val commonTest by getting {

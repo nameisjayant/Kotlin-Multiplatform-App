@@ -1,6 +1,6 @@
-package com.example.multiplatformapp.repository
+package com.example.multiplatformapp.api_calling.di.repository
 
-import com.example.multiplatformapp.remote.ApiService
+import com.example.multiplatformapp.api_calling.di.remote.ApiService
 import kotlinx.coroutines.flow.flow
 
 class PostRepository constructor(private val apiService: ApiService) {

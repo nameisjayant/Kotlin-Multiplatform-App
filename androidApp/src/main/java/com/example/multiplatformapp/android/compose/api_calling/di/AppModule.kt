@@ -1,4 +1,4 @@
-package com.example.multiplatformapp.android.compose.di
+package com.example.multiplatformapp.android.compose.api_calling.di
 
 
 import com.example.multiplatformapp.android.compose.MainViewModel

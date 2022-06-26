@@ -19,7 +19,7 @@ object ConfigData {
     const val targetSdkVersion = 32
     const val versionCode = 1
     const val versionName = "1.0"
-    const val jvmTarget = "1.8"
+    const val jvmTarget = "17"
     const val kotlinCompilerExtVersion = "1.2.0-rc02"
     const val kotlinxSerialization = "1.3.3"
 

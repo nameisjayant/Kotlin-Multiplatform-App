@@ -1,12 +1,11 @@
-package com.example.multiplatformapp.remote
+package com.example.multiplatformapp.api_calling.di.remote
 
-import com.example.multiplatformapp.model.AstroResult
-import com.example.multiplatformapp.model.Phone
-import com.example.multiplatformapp.model.Post
-import com.example.multiplatformapp.model.RocketLaunch
+import com.example.multiplatformapp.api_calling.di.model.AstroResult
+import com.example.multiplatformapp.api_calling.di.model.Phone
+import com.example.multiplatformapp.api_calling.di.model.Post
+import com.example.multiplatformapp.api_calling.di.model.RocketLaunch
 import io.ktor.client.*
 import io.ktor.client.call.*
-import io.ktor.client.plugins.observer.*
 import io.ktor.client.request.*
 
 class ApiService(

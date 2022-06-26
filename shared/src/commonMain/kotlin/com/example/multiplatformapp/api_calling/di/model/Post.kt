@@ -1,4 +1,4 @@
-package com.example.multiplatformapp.model
+package com.example.multiplatformapp.api_calling.di.model
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

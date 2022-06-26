@@ -1,7 +1,7 @@
-package com.example.multiplatformapp.di
+package com.example.multiplatformapp.api_calling.di
 
-import com.example.multiplatformapp.remote.ApiService
-import com.example.multiplatformapp.repository.PostRepository
+import com.example.multiplatformapp.api_calling.di.remote.ApiService
+import com.example.multiplatformapp.api_calling.di.repository.PostRepository
 import io.ktor.client.*
 import io.ktor.client.plugins.*
 import io.ktor.client.plugins.contentnegotiation.*
